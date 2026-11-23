@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ukrainian Text Processing Pipeline</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Ukrainian Text Processing Pipeline</h1>
+    <p class="subtitle">
+      Обробка українських та російських текстів (у т.ч. з помилками та скороченнями) з виводом українською мовою.
+    </p>
+
+    <div class="field-group">
+      <label for="taskSelect">Оберіть задачу або режим routing:</label>
+      <select id="taskSelect">
+        <option value="auto_route">4. Auto Route (автоматичний вибір задачі)</option>
+        <option value="relevance">1. Бінарна класифікація (релевантність IT-тематиці)</option>
+        <option value="event_json">2. Класифікація події + структурований JSON</option>
+        <option value="narrative">3. Генерація короткого наративу українською</option>
+        <option value="qa">5. Відповідь на запитання за контекстом</option>
+      </select>
+    </div>
+
+    <div class="field-group">
+      <label for="inputText">Вхідний текст або запитання:</label>
+      <textarea
+        id="inputText"
+        rows="4"
+        placeholder="Наприклад: Сервак прод впав через витік памяті в контейнері докер, терміново рестартимо!"
+      ></textarea>
+    </div>
+
+    <div class="field-group">
+      <label for="contextText">Контекст (потрібен для задачі QA — відповіді за контекстом):</label>
+      <textarea
+        id="contextText"
+        rows="3"
+        placeholder="Вставте сюди уривок тексту, на основі якого модель має дати відповідь..."
+      ></textarea>
+    </div>
+
+    <button id="submitBtn" type="button">Виконати обробку</button>
+
+    <section class="result-box">
+      <h2>Результат</h2>
+      <div id="statusBadge" class="status-badge">Очікування запиту...</div>
+      <pre id="resultOutput">{}</pre>
+    </section>
+  </main>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
