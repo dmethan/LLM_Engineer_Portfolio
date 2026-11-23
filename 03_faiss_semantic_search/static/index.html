@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAISS Semantic Search & Transformers</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>FAISS Semantic Search &amp; Hugging Face Transformers</h1>
+    <p class="subtitle">
+      Семантичний пошук по відкритому датасету <code>ag_news</code> через токенізацію, ембединги та індекс <strong>FAISS</strong>, а також передбачення токенів.
+    </p>
+
+    <section class="card">
+      <h2>1. Семантичний пошук у FAISS</h2>
+
+      <div class="row">
+        <div class="field-group grow">
+          <label for="searchQuery">Пошуковий запит (англійською):</label>
+          <input
+            id="searchQuery"
+            type="text"
+            placeholder="Наприклад: artificial intelligence and new space rocket launch"
+          />
+        </div>
+
+        <div class="field-group small-col">
+          <label for="topKInput">Top-K:</label>
+          <input id="topKInput" type="number" min="1" max="10" value="5" />
+        </div>
+      </div>
+
+      <button id="searchBtn" type="button">Знайти схожі документи</button>
+      <div id="searchStatus" class="status-text">Готово до пошуку.</div>
+
+      <div id="tokenInfoBox" class="token-box hidden">
+        <strong>Токенізація та ембединги:</strong>
+        <div id="tokenDetails"></div>
+      </div>
+
+      <div id="searchResults" class="results-list"></div>
+    </section>
+
+    <section class="card">
+      <h2>2. Передбачення токенів ([MASK])</h2>
+
+      <div class="field-group">
+        <label for="maskSentence">Речення з токеном [MASK] (або без нього — додамо в кінець):</label>
+        <input
+          id="maskSentence"
+          type="text"
+          placeholder="Наприклад: The stock market rose after the central bank cut [MASK]."
+        />
+      </div>
+
+      <button id="predictBtn" type="button">Передбачити токени</button>
+      <div id="predictStatus" class="status-text">Очікування речення.</div>
+      <div id="predictResults" class="results-list"></div>
+    </section>
+  </main>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>

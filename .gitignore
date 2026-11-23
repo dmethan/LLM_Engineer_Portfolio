@@ -8,6 +8,9 @@ env/
 **/chroma_db/
 **/lora_adapter_output/
 **/models_cache/
+**/saved_models/
+.gradio
+**/faiss_index/
 *.gguf
 .idea/
 .pytest_cache/
