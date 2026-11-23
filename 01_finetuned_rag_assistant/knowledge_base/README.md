@@ -1,0 +1,148 @@
+# Data Science Research and Development Laboratory
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+![version](https://img.shields.io/badge/version-1.0-blue)
+![Python](https://img.shields.io/badge/python-3.13-blue.svg)
+![Data Science](https://img.shields.io/badge/Data%20Science-research-orange.svg)
+![ML](https://img.shields.io/badge/Machine%20Learning-active-green.svg)
+
+Інноваційна платформа для досліджень та експериментів у сфері машинного навчання
+
+✅ Сервіс працює на хостингу Render за посиланням нижче, очікування 1хв через безкоштовний план
+
+[**https://data-science-r-d-laboratory.onrender.com**](https://data-science-r-d-laboratory.onrender.com)
+
+![Intro](images/intro_img.png)
+
+## 🚀 Data Science Lab
+Аналіз • Моделі • Прогноз
+
+- 📊 Регресія  
+- 🔍 Класифікація  
+- 🌀 Кластеризація  
+
+---
+
+## ⚡ Звичайний режим
+![Basic mode Training](images/basic_mode_show_csv.gif)
+
+### 🌀 Кластеризація
+![Clustering](images/basic_mode_clustering.gif)
+
+---
+
+## 🎯 Професійний режим
+![Professional mode Training](images/professional/professional_mode_intro.gif)
+
+### Завантаження CSV → Цільова змінна → Тип задачі
+![Intro professional mode](images/professional/intro.png)
+
+### ⚙️ Вибір моделі + параметри
+![Select model](images/professional/select_model.png)
+
+### 📊 Повна інформація + графіки
+![Full info model](images/professional/full_info_model.png)  
+![Plots and load model](images/professional/plots_load_model.png)
+
+### 🔮 Прогноз + PDF звіт
+![Prediction result 1](images/professional/pred_result_1.png)  
+![Prediction result 2](images/professional/pred_result_2.png)
+
+### 📝 Логи та порівняння моделей
+![Logs page](images/professional/logs_page.png)  
+![Comparing models 1](images/professional/comparing_page_1.png)  
+![Comparing models 2](images/professional/comparing_page_2.png)
+
+---
+
+## 📊 Порівняння моделей
+![Comparing models page](images/professional/comparing_models_page.gif)
+
+---
+
+## 📝 Логи
+![Logs page GIF](images/professional/logs_page.gif)
+
+---
+
+## 🎯 Ручний режим / AutoML
+
+### Можливості:
+1. Обробка пропущених значень
+2. Кодування категоріальних, текстових ознак
+3. Розділення на тренувальну, навчальну, валідаційну вибірку
+4. Вибір методу прогнозу
+5. Автоматичне виведення топ-3 найкращих моделей
+
+![Manual mode Training](images/manual/manual_mode_preview.gif)
+![Manual mode correlation](images/manual/manual_gif2.gif)
+![Manual mode preprocessing](images/manual/manual_gif3.gif)
+## 🎓 Призначення платформи
+Дослідження • Прототипи • Аналіз • Навчання • Демонстрація
+
+---
+
+# Інструкція запуску сервісу з Docker Hub
+
+Цей сервіс доступний як готовий контейнер на Docker Hub:  
+`dmetan/data_science_rnd_lab:latest`
+
+---
+
+## 🔹 Запуск через `docker run`
+
+1. Завантажте образ:
+
+   ```bash
+   docker pull dmetan/data_science_rnd_lab:latest
+   ```
+
+2. Запустіть контейнер:
+
+   ```bash
+   docker run -p 8000:8000 dmetan/data_science_rnd_lab:latest
+   ```
+
+3. Відкрийте у браузері:
+
+   ```text
+   http://localhost:8000
+   ```
+
+## 🔹 Запуск через `docker-compose`
+
+1. Переконайтеся, що у проєкті є файл `docker-compose.yml`.
+
+2. Запустіть сервіс:
+
+   ```bash
+   docker-compose up
+   ```
+
+3. Відкрийте у браузері:
+
+   ```text
+   http://localhost:8000
+   ```
+
+✅ Сервіс буде доступний локально за адресою [**http://localhost:8000**](http://localhost:8000) після запуску контейнера.
+
+## 🚀 Запуск платформи
+
+1. Склонуйте репозиторій:
+   ```bash
+   git clone https://github.com/dmethan/Data-Science-R-D_laboratory.git
+    ```
+   
+2. Перейдіть у папку проекту:
+   ```bash
+   cd repository
+    ```
+3. Встановіть залежності:
+    ```bash
+   pip install -r requirements.txt
+   ```
+
+4. Запустіть сервер:
+    ```bash
+   uvicorn main:app --reload
+   ```
